@@ -4,11 +4,10 @@ Este repositório contém um chatbot focado em recuperar e recomendar artigos ci
 Sumário
 1 Principais Funcionalidades
 2 Instalação e Configuração
-3 Estrutura do Projeto
-4 Uso do Sistema
-5 Métricas de Avaliação
-6 Possíveis Expansões
-7 Contribuições
+3 Uso do Sistema
+4 Métricas de Avaliação
+5 Possíveis Expansões
+6 Contribuições
 
 1 Principais Funcionalidades
 Coleta de Artigos: Scripts que baixam e unificam artigos do PubMed em arquivos JSON.
@@ -31,7 +30,7 @@ pip install biopython torch transformers scikit-learn gradio
 Configurar Credenciais para PubMed (opcional)
 Caso use a API do PubMed em scripts de coleta, defina Entrez.email = "seu_email_válido@example.com".
 
-4 Uso do Sistema
+3 Uso do Sistema
 Coleta de Artigos
 Execute o script responsável por baixar e unificar artigos do PubMed (ex.: Merge articles.py e depois Correct merge articles.py). Os dados serão salvos em JSON na pasta data/.
 Criação dos Embeddings
@@ -40,20 +39,20 @@ Rodar o Chatbot
 Com os embeddings já criados, execute o arquivo principal do chatbot: Chatbot.py
 A aplicação abrirá em um link local (fornecido pelo Gradio) onde você poderá digitar consultas (como “Artificial Intelligence in health” ou “cancer treatment”) e receberá artigos relevantes.
 
-5 Métricas de Avaliação
+4 Métricas de Avaliação
 As métricas implementadas incluem:
 Precision@k: Mede quantos dos k primeiros resultados são relevantes.
 Mean Average Precision (MAP): Considera a posição de cada resultado relevante no ranque, fornecendo uma visão global do desempenho.
 Mean Reciprocal Rank (MRR): Avalia quão cedo aparece o primeiro documento relevante em cada lista de resultados.
 Esse pacote de métricas oferece um retrato abrangente de como o chatbot se comporta ao priorizar artigos importantes para cada consulta.
 
-6 Possíveis Expansões
+5 Possíveis Expansões
 Fine-tuning de PubMedBERT: Ajuste do modelo em subáreas específicas (oncologia, saúde digital etc.) para ganhar precisão semântica.
 Integração de Ontologias: Uso de bases como MeSH ou UMLS para melhorar a identificação de sinônimos e termos correlatos.
 Feedback de Usuários: Adicionar um mecanismo para que pesquisadores avaliem a pertinência dos artigos recomendados, reforçando o ranqueamento.
 Ingestão de Outras Fontes: Expandir para bases como Scopus e Web of Science, tornando o acervo de artigos ainda mais abrangente.
 
-7 Contribuições
+6 Contribuições
 Sinta-se à vontade para enviar issues, pull requests ou sugestões. Toda colaboração que aprimore a precisão, a usabilidade ou a manutenção do projeto é bem-vinda. Sugestões de estrutura de dados, optimizações de GPU/CPU e melhorias na interface do Gradio também são importantes!
 
 
